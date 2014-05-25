@@ -26,6 +26,13 @@
 									<form id="search" action="/add" method="post">
 										<input name="search" placeholder="Title,  Artist" type="search" class="gn-search">
 									</form>
+									<script type="text/javascript">
+										$(document).ajaxStart(function() {
+										    $('img/loading.gif').show();
+										}).ajaxStop(function() {
+										    $('img/loading.gif').hide();
+										});
+									</script>
 									<a class="gn-icon gn-icon-search"><span>Search</span></a>
 								</li>
 								<li><a href="playlist.html" class="gn-icon gn-icon-archive">Playlist</a></li>
@@ -35,7 +42,7 @@
 						</div>
 					</nav>
 				</li>
-						<span class="imgframe centerimg"><a href = "index.html"><img src="img/logo.png" style="text-align:center"/></a></span>
+					<span class="imgframe centerimg"><a href = "index.html"><img src="img/logo.png" style="text-align:center"/></a></span>
 			</ul>
 			<header>
 				<h1>Welcome to Music Choose <span>A fun way to make  <a href="http://grooveshark.com" target="blank">Grooveshark</a> playlists group</span></h1>	
