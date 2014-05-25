@@ -42,7 +42,9 @@
 						<div class="gn-scroller">
 							<ul class="gn-menu">
 								<li class="gn-search-item">
-									<input placeholder="Search" type="search" class="gn-search">
+									<form id="search" action="/add" method="post">
+										<input name="search" placeholder="Title,  Artist" type="search" class="gn-search">
+									</form>
 									<a class="gn-icon gn-icon-search"><span>Search</span></a>
 								</li>
 								<li><a href="playlist.html" class="gn-icon gn-icon-archive">Playlist</a></li>
@@ -57,7 +59,7 @@
 				<li><span></span></a></li>
 			</ul>
 
-			<section class="tasks">
+			<section class="tasks" style="margin: 75px auto">
 		    <header class="tasks-header">
 		      <h2 class="tasks-title">Current Playlist</h2>  
 		    </header>
@@ -84,6 +86,5 @@
 		  </section>
 		</div>
 
-		
 	</body>
 </html>
