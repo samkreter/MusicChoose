@@ -15,18 +15,24 @@
 		<script src="js/gnmenu.js"></script>
 		<script type="text/javascript">
 		jQuery(function($) {
-			var foo;
+
 			var template = ['<video id="player" width="320" height="240" controls autoplay>',
 				             '<source src="<SOURCE>">',
 			                 '</video>'].join(' ');
 
-			$('#player').bind("ended",function(){
-				$('#VideoDiv').html(' ');
+		(function loadVid(){
+			 $('#VideoDiv').html(' ');
 				$.getJSON("/play",function(result){
-					foo = result;
-		            $(template.replace("<SOURCE>",result.StreamUrl)).appendTo($('#VideoDiv'))
-		         });
-			});
+		           $(template.replace("<SOURCE>",result.StreamUrl)).appendTo($('#VideoDiv'));
+		           $('#player').bind("ended",function(){
+		           	loadVid();
+		 		});
+		       });
+			})();
+			
+				
+
+			
 
 			new gnMenu( document.getElementById( 'gn-menu' ) );
 		});
@@ -68,17 +74,6 @@
 		    </header>
 
 		    <fieldset class="tasks-list">
-		      <label class="tasks-list-item">  
-		        <span class="tasks-list-desc">Sample Song #1</span>
-		      </label>
-
-		      <label class="tasks-list-item">
-		        <span class="tasks-list-desc">Sample Song #2</span>
-		      </label>
-		      
-		      <label class="tasks-list-item">  
-		        <span class="tasks-list-desc">Sample Song #3</span>
-		      </label>
 		    </fieldset>
 		  </section>
 		</div>
