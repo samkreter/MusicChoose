@@ -41,6 +41,7 @@ app.post('/add', function(req,res){
     console.log(data);
 	grooveshark.search(data,function(data){
 		playlist.push(data);
+	
     });
 });
 
