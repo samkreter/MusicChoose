@@ -84,11 +84,17 @@ app.post('/vote',function(req,res){
 	}
 });
 
+app.get('/host',function(req,res){
+	res.send(host.html)
+});
 
 app.get('/playlist',function(req,res){
 	res.send(playlist);
 });
 
+app.get('/play',function(req,res){
+	res.send(playlist.shift());
+});
 
 
 app.get('/users', user.list);
