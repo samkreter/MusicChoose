@@ -40,7 +40,18 @@ app.post('/add', function(req,res){
     var data = req.body.search.split(", ");
     console.log(data);
 	grooveshark.search(data,function(data){
-		playlist.push(data);
+		
+		var isThere = false;
+
+		for(i=0;i<playlist.length;i++){
+			if(playlist[i].SongID == data.SongID){
+				playlist[i].val++;
+				isThere = true;
+			}
+		}
+		if(!isThere){
+			playlist.push(data);
+		}
 	
     });
 });
