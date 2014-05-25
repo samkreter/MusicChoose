@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+		<title>Music Choose</title>
+		<link rel="shortcut icon" href="../favicon.ico">
+		<link rel="stylesheet" type="text/css" href="http://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.1/normalize.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/style.css" />
+		<link rel="stylesheet" type="text/css" href="css/component.css" />
+		<link rel="stylesheet" type="text/css" href="css/playlist.css" />
+		<script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.2/modernizr.min.js"></script>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+		<script src="js/classie.js"></script>
+		<script src="js/gnmenu.js"></script>
+		<script type="text/javascript">
+		jQuery(function($) {
+			function createHandler(img) {
+				return function handler(evt) {
+					var $el = $(evt.target);
+					if (!$el.hasClass("checked")) {
+						$el.addClass('checked');
+						$el.attr('src', img)
+					}				
+				}
+			}
+			$(".tasks-list-mark.up").click(createHandler("img/up_enabled.png"));
+			$(".tasks-list-mark.down").click(createHandler("img/down_enabled.png"));
+
+			new gnMenu( document.getElementById( 'gn-menu' ) );
+		});
+		</script>
+	</head>
+
+	<body>
+
+		<div class="container">
+			<ul id="gn-menu" class="gn-menu-main">
+				<li class="gn-trigger">
+					<a class="gn-icon gn-icon-menu"><span>Menu</span></a>
+					<nav class="gn-menu-wrapper">
+						<div class="gn-scroller">
+							<ul class="gn-menu">
+								<li class="gn-search-item">
+									<form id="search" action="/add" method="post">
+										<input name="search" placeholder="Title,  Artist" type="search" class="gn-search">
+									</form>
+									<a class="gn-icon gn-icon-search"><span>Search</span></a>
+								</li>
+								<li><a href="playlist.html" class="gn-icon gn-icon-archive">Playlist</a></li>
+								<li><a class="gn-icon gn-icon-cog">Settings</a></li>
+								<li><a class="gn-icon gn-icon-help">Help</a></li>
+							</ul>
+						</div>
+					</nav>
+				</li>
+				<li></li>
+				<li><span></span></li>
+				<li><span></span></a></li>
+			</ul>
+
+			<section class="tasks" style="margin: 75px auto">
+		    <header class="tasks-header">
+		      <h2 class="tasks-title">Current Playlist</h2>  
+		    </header>
+
+		    <fieldset class="tasks-list">
+		      <label class="tasks-list-item">  
+		        <img id="1" class="tasks-list-mark up" src="img/up_disabled.png" />
+		        <img id="2" class="tasks-list-mark down" src="img/down_disabled.png" />
+		        <span class="tasks-list-desc">Sample Song #1</span>
+		      </label>
+
+		      <label class="tasks-list-item">
+		        <img id="3" class="tasks-list-mark up" src="img/up_disabled.png" />
+		        <img id="4" class="tasks-list-mark down" src="img/down_disabled.png" />
+		        <span class="tasks-list-desc">Sample Song #2</span>
+		      </label>
+		      
+		      <label class="tasks-list-item">  
+		        <img id="5" class="tasks-list-mark up" src="img/up_disabled.png" />
+		        <img id="6" class="tasks-list-mark down" src="img/down_disabled.png" />
+		        <span class="tasks-list-desc">Sample Song #3</span>
+		      </label>
+		    </fieldset>
+		  </section>
+		</div>
+
+	</body>
+</html>
