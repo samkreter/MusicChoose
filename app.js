@@ -8,7 +8,9 @@ var routes = require('./routes');
 var user = require('./routes/user');
 var http = require('http');
 var path = require('path');
-var GS = require('grooveshark-streaming');
+var grooveshark = require('./grooveshark');
+
+
 
 var app = express();
 
@@ -29,12 +31,18 @@ if ('development' == app.get('env')) {
   app.use(express.errorHandler());
 }
 
-app.get('/', function(req,res){
-	GS.Tinysong.getSongInfo('Love of My Life', 'Queen', function(err, songInfo) {
-    GS.Grooveshark.getStreamingUrl(songInfo.SongID, function(err, streamUrl) {
-      console.log(streamUrl);
+//yea sorry global 
+var playlist = [];
+
+
+
+app.post('/add', function(req,res){
+		//var hello = "save me,Shinedown";
+	    var data = req.body.split(",");
+	    console.log(data);
+		grooveshark.search(data,function(data){
+			playlist.pop(data);
     });
-  });
 });
 app.get('/users', user.list);
 
