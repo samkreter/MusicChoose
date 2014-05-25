@@ -25,7 +25,6 @@
 
 			function createHandler(img,vote,id) {
 				return function handler(evt) {
-					alert("hey");
 					var $el = $(evt.target);
 					$.post("/vote", {id: id, vote: vote}); 
 					if (!$el.hasClass("checked")) {
