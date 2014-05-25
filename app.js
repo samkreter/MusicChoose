@@ -65,7 +65,6 @@ app.post('/vote',function(req,res){
 
 
 	for(i=0;i<playlist.length;i++){
-		console.log(playlist[i].SongID);
 		if(playlist[i].SongID == req.body.id){
 			if(req.body.vote == 'd'){
 				playlist[i].val--;
@@ -75,16 +74,13 @@ app.post('/vote',function(req,res){
 			}
 		}
 	}
-	for(i=0;i<playlist.length;i++){
-		console.log(playlist[i].SongName);
-	}
+	
 	playlist.sort(function(a, b){
-	    if(a.SongID < b.SongID) return -1;
-	    if(a.SongID > b.SongID) return 1;
-	    return 0;
+	    return b.val - a.val;
     });
+
     for(i=0;i<playlist.length;i++){
-		console.log(playlist[i].SongName);
+		console.log(playlist[i].SongName+" "+playlist[i].val);
 	}
 });
 

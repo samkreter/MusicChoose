@@ -15,17 +15,10 @@
 		<script src="js/gnmenu.js"></script>
 		<script type="text/javascript">
 		jQuery(function($) {
-			function createHandler(img) {
-				return function handler(evt) {
-					var $el = $(evt.target);
-					if (!$el.hasClass("checked")) {
-						$el.addClass('checked');
-						$el.attr('src', img)
-					}				
-				}
-			}
-			$(".tasks-list-mark.up").click(createHandler("img/up_enabled.png"));
-			$(".tasks-list-mark.down").click(createHandler("img/down_enabled.png"));
+			
+			$.getJSON("/play",function(result){
+	            $('#videoUrl').attr('src',result.StreamUrl);
+	         });
 
 			new gnMenu( document.getElementById( 'gn-menu' ) );
 		});
@@ -57,7 +50,7 @@
 			</ul>
 			<div align="center" style="margin-top:50px">
 			<video width="320" height="240" controls>
-			  <source src="movie.mp4" type="video/mp4">
+			  <source id="videoUrl" src="movie.mp4" type="video/mp4">
 			</video>
 			</div>
 
