@@ -37,11 +37,15 @@
 
 			new gnMenu( document.getElementById( 'gn-menu' ) );
 
-
+			(function worker() {
+	             $.getJSON("/playlist",function(result){
+	            	renderList(result);
+	             });
+	    		 setTimeout(worker, 5000);
+			 })();
 			
-			$.getJSON("/playlist",function(result){
-            	renderList(result);
-            });
+			
+			
 
 			function renderList(songs) {
 				$('#songlist').html('');
