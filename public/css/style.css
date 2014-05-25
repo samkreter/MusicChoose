@@ -69,6 +69,19 @@ body {
 	display: inline-block;
 }
 
+.imgframe {
+    display: block;
+    text-align:center;
+}
+.imgframe img {
+    border: 1px solid #FFFFFF;
+    margin: 0;
+}
+
+.imgframe:hover {
+	display:none;
+}
+
 .codrops-top a:hover {
 	background: rgba(255,255,255,0.95);
 	color: #333;
