@@ -44,13 +44,15 @@ app.post('/add', function(req,res){
     });
 });
 
-app.get('/vote',function(req,res){
+app.post('/vote',function(req,res){
+	console.log(req.body.id);
+	console.log(req.body.vote);
 	for(i=0;i<playlist.length;i++){
-		if(playlist[i].SongID == res.query['id']){
-			if(req.query['val'] == 'd'){
+		if(playlist[i].SongID == req.body.id){
+			if(req.body.vote == 'd'){
 				playlist[i].val--;
 			}
-			if(req.query['val'] == 'u'){
+			if(req.body.vote == 'u'){
 				playlist[i].val++;
 			}
 		}

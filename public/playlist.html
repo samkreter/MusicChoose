@@ -22,7 +22,7 @@
 		      	'</label>'].join('');
 
 
-			function createHandler(vote, img) {
+			function createHandler(img,vote) {
 				return function handler(evt) {
 					var $el = $(evt.target);
 					$.post("/vote", {id: $el.data().id, vote: vote}); 
@@ -49,8 +49,8 @@
 					var song = $(template.replace("<NAME>", song.title)).appendTo($('#songlist')).data({id:song.id});
 				});
 
-				$(".tasks-list-mark.up").click(createHandler("img/up_enabled.png", +1));
-				$(".tasks-list-mark.down").click(createHandler("img/down_enabled.png", -1));
+				$(".tasks-list-mark.up").click(createHandler("img/up_enabled.png", 'u'));
+				$(".tasks-list-mark.down").click(createHandler("img/down_enabled.png", 'd'));
 			}
 
 			renderList(items);
