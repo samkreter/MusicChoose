@@ -4,7 +4,7 @@ jQuery(function($) {
 		        '<img id="<DOWNID>" class="tasks-list-mark down" src="img/down_disabled.png" />',
 		        '<span class="tasks-list-desc"><NAME></span>',
 		      	'</label>'].join('');
-
+		     var socket = io.connect();
 
 			function createHandler(img,vote,id) {
 				return function handler(evt) {
@@ -20,12 +20,23 @@ jQuery(function($) {
 
 			new gnMenu( document.getElementById( 'gn-menu' ) );
 
-			(function worker() {
+
+			//get the updated playlist 
+			socket.on('updatePlaylist', function(data){
+				alert("got socket");
+				renderList(data);
+			});
+
+
+			//old ajax way
+			/*(function worker() {
 	             $.getJSON("/playlist",function(result){
 	            	renderList(result);
 	             });
 	    		 setTimeout(worker, 1000);
-			 })();
+			 })();*/
+
+
 			
 			
 			
