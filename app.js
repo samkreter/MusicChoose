@@ -11,8 +11,15 @@ var path = require('path');
 var grooveshark = require('./grooveshark');
 
 
-
+//set up sockets
 var app = express();
+var server = require('http').createServer(app);
+var io = require('socket.io').listen(server);
+
+
+//app varibles
+var playlist = [];
+
 
 // all environments
 app.set('port', process.env.PORT || 3000);
@@ -31,15 +38,7 @@ if ('development' == app.get('env')) {
   app.use(express.errorHandler());
 }
 
-//yea sorry global 
-var playlist = [];
 
-
-// function cleanPlaylist(){
-// 	for(i=0;i<playlist.length;i++){
-// 		if
-// 	}
-// }
 
 app.post('/add', function(req,res){
     var data = req.body.search.split(", ");
@@ -56,6 +55,7 @@ app.post('/add', function(req,res){
 		}
 		if(!isThere){
 			playlist.push(data);
+			io.sockets.emit('updatePlaylist', playlist);
 		}
     });
 });
@@ -68,6 +68,7 @@ app.post('/vote',function(req,res){
 		if(playlist[i].SongID == req.body.id){
 			if(req.body.vote == 'd'){
 				playlist[i].val--;
+
 			}
 			if(req.body.vote == 'u'){
 				playlist[i].val++;
@@ -78,6 +79,8 @@ app.post('/vote',function(req,res){
 	playlist.sort(function(a, b){
 	    return b.val - a.val;
     });
+
+	io.sockets.emit('updatePlaylist', playlist);
 
     for(i=0;i<playlist.length;i++){
 		console.log(playlist[i].SongName+" "+playlist[i].val);
@@ -97,8 +100,12 @@ app.get('/play',function(req,res){
 });
 
 
-app.get('/users', user.list);
+io.sockets.on('connection',function(socket){
 
-http.createServer(app).listen(app.get('port'), function(){
+	io.sockets.emit('updatePlaylist', playlist);
+
+});
+
+server.listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
 });
