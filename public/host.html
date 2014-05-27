@@ -13,30 +13,7 @@
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 		<script src="js/classie.js"></script>
 		<script src="js/gnmenu.js"></script>
-		<script type="text/javascript">
-		jQuery(function($) {
-
-			var template = ['<video id="player" width="320" height="240" controls autoplay>',
-				             '<source src="<SOURCE>">',
-			                 '</video>'].join(' ');
-
-		(function loadVid(){
-			 $('#VideoDiv').html(' ');
-				$.getJSON("/play",function(result){
-		           $(template.replace("<SOURCE>",result.StreamUrl)).appendTo($('#VideoDiv'));
-		           $('#player').bind("ended",function(){
-		           	loadVid();
-		 		});
-		       });
-			})();
-			
-				
-
-			
-
-			new gnMenu( document.getElementById( 'gn-menu' ) );
-		});
-		</script>
+		<script src="js/host.js"></script>
 	</head>
 
 	<body>
