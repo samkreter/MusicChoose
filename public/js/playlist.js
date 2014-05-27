@@ -23,8 +23,11 @@ jQuery(function($) {
 
 			//get the updated playlist 
 			socket.on('updatePlaylist', function(data){
-				alert("got socket");
-				renderList(data);
+				if(!data){
+					alert("song does not exist");
+				}else{
+					renderList(data);
+				}
 			});
 
 
