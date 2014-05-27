@@ -42,20 +42,22 @@ if ('development' == app.get('env')) {
 
 app.post('/add', function(req,res){
     var data = req.body.search.split(", ");
-    console.log(data);
 	grooveshark.search(data,function(data){
-		
-		var isThere = false;
-		console.log("added to array");
-		for(i=0;i<playlist.length;i++){
-			if(playlist[i].SongID == data.SongID){
-				playlist[i].val++;
-				isThere = true;
+		if(!data){
+			io.sockets.emit('updatePlaylist',false);
+		}else{
+			var isThere = false;
+			console.log("added to array");
+			for(i=0;i<playlist.length;i++){
+				if(playlist[i].SongID == data.SongID){
+					playlist[i].val++;
+					isThere = true;
+				}
 			}
-		}
-		if(!isThere){
-			playlist.push(data);
-			io.sockets.emit('updatePlaylist', playlist);
+			if(!isThere){
+				playlist.push(data);
+				io.sockets.emit('updatePlaylist', playlist);
+			}
 		}
     });
 });
@@ -82,9 +84,6 @@ app.post('/vote',function(req,res){
 
 	io.sockets.emit('updatePlaylist', playlist);
 
-    for(i=0;i<playlist.length;i++){
-		console.log(playlist[i].SongName+" "+playlist[i].val);
-	}
 });
 
 app.get('/host',function(req,res){
