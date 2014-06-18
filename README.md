@@ -1,4 +1,4 @@
 MusicChoose
 ===========
 
-webapp that utilizes grooveshark api
+webapp that utilizes grooveshark api for collaborative playlists
