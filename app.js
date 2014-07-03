@@ -48,6 +48,7 @@ app.post('/add', function(req,res){
 			io.sockets.emit('updatePlaylist', result);
 		});
 	});
+	
 });
 
 app.get('/',routes.index);
@@ -55,7 +56,6 @@ app.get('/host',routes.host);
 app.get('/playlist',routes.playlist);
 
 app.post('/vote',function(req,res){
-
 
 
 	for(i=0;i<playlist.length;i++){
