@@ -43,7 +43,11 @@ if ('development' == app.get('env')) {
 
 app.post('/add', function(req,res){
     var data = req.body.search.split(", ");
-	grooveshark.search(data,playlist_logic.addSong);
+	grooveshark.search(data,function(song_data){
+		playlist_logic.addSong(song_data,playlist,function(result){
+			io.sockets.emit('updatePlaylist', result);
+		});
+	});
 });
 
 app.get('/',routes.index);

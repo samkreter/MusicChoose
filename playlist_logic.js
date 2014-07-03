@@ -1,6 +1,6 @@
-module.exports.addSong = function addSong(song_data){
+module.exports.addSong = function addSong(song_data,playlist,callback){
 		if(!song_data){
-			io.sockets.emit('updatePlaylist',false);
+			callback(false);
 		}else{
 			var isThere = false;
 			console.log("added to array");
@@ -12,7 +12,7 @@ module.exports.addSong = function addSong(song_data){
 			}
 			if(!isThere){
 				playlist.push(song_data);
-				io.sockets.emit('updatePlaylist', playlist);
+				callback(playlist);
 			}
 		}
     };
