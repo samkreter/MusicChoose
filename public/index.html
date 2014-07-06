@@ -1,53 +1,251 @@
 <!DOCTYPE html>
-<html lang="en" class="no-js">
-	<head>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-		<title>Music Choose</title>
-		<link rel="shortcut icon" href="img/favicon.ico">
-		<link rel="stylesheet" type="text/css" href="http://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.1/normalize.min.css" />
-		<link rel="stylesheet" type="text/css" href="css/style.css" />
-		<link rel="stylesheet" type="text/css" href="css/component.css" />
-		<script src="js/classie.js"></script>
-		<script src="js/gnmenu.js"></script>
-		<script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.2/modernizr.min.js"></script>
-	</head>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <link rel="shortcut icon" href="img/favicon.ico">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/flat-ui/css/flat-ui.css">
+    <link rel="stylesheet" href="css/page/icon-font.css">
+    <link rel="stylesheet" href="css/page/animations.css">
+    <link rel="stylesheet" href="css/page/style.css">
+    <script type="text/javascript" src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 
-	<body>
-		<div class="container">
-			<ul id="gn-menu" class="gn-menu-main">
-				<li class="gn-trigger">
-					<a class="gn-icon gn-icon-menu"><span>Menu</span></a>
-					<nav class="gn-menu-wrapper">
-						<div class="gn-scroller">
-							<ul class="gn-menu">
-								<li class="gn-search-item">
-									<form id="search" action="/add" method="post">
-										<input name="search" placeholder="Title,  Artist" type="search" class="gn-search">
-									</form>
-									<a class="gn-icon gn-icon-search"><span>Search</span></a>
-								</li>
-								<li><a href="playlist.html" class="gn-icon gn-icon-archive">Playlist</a></li>
-								<li><a class="gn-icon gn-icon-cog">Settings</a></li>
-								<li><a class="gn-icon gn-icon-help">Help</a></li>
-							</ul>
-						</div>
-					</nav>
-				</li>
-					<span class="imgframe centerimg"><a href = "index.html"><img src="img/logo.png" style="text-align:center"/></a></span>
-			</ul>
+    <title>plist.io</title>
+  </head>
 
-			<header>
-				
-				<h1>Welcome to Music Choose <span>A fun way to make  <a href="http://grooveshark.com" target="blank">Grooveshark</a> playlists group</span></h1>
-				<a href="host.html" class="button-1" style="margin:30px">Host</a><a href="playlist.html" class="button-1" style="margin:30px">Guest</a>
-			
-			</header>
-		</div>
-	
-		<script type="text/javascript">
-			new gnMenu( document.getElementById( 'gn-menu' ) );
-		</script>
+  <body>
+    <div class="page-wrapper"><header class="header-11">
+  <div class="container">
+    <div class="row">
+      <div class="navbar col-sm-12" role="navigation">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle"></button>
+          <a class="brand" href="index.html">plist.io</a>
+        </div>
+        <div class="collapse navbar-collapse pull-right">
+          <ul class="nav pull-left">
+            <li><a href="#">HOME</a></li>
+            <li><a href="#">FEATURES</a></li>
+            <li><a href="#">PRICING</a></li>
+            <li><a href="#">CONTACT</a></li>
+          </ul>
+          <form class="navbar-form pull-left">
+            <a class="btn btn-info" href="#">SIGN IN</a>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="header-background"></div>
+</header>
+<section class="header-11-sub bg-midnight-blue">
+  <div class="background">&nbsp;</div>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-4">
+        <h3>Let the guests choose!</h3>
+        <p>You worked hard to arrange the best event, but guests are still displeased. It's not about what they see but instead what they hear.</p>
+        <div class="signup-form">
+          <form>
+            <div class="form-group">
+              <input class="form-control" type="text" placeholder="Your E-mail">
+            </div>
+            <div class="form-group">
+              <div>
+                <input type="password" class="form-control" placeholder="Password">
+              </div>
+              <div>
+                <input type="password" class="form-control" placeholder="Confirmation">
+              </div>
+            </div>
+            <div class="form-group">
+              <button type="submit" class="btn btn-block btn-info">Sign Up</button>
+            </div>
+           </form>
+        </div>
+        <div class="additional-links">By signing up you agree to <a href="#">Terms of Use</a> and <a href="#">Privacy Policy</a></div>
+      </div>
+      <div class="col-sm-7 col-sm-offset-1 player-wrapper">
+        <div class="player">
+          <iframe id="pPlayer"
+            src=""
+            frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="content-3">
+  <div>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-6 aligment">
+          <h3>We’ve created the product that will improve your next event.</h3>
+          <p>
+            plist is a
+          </p>
+        </div>
+        <div class="col-sm-6">
+          <div class="img">
+            <img src="img/landing/ticket-green@2x.png" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="delimiter">&nbsp;</div>
+    <div class="container">
+      <div class="row features">
+        <div class="col-sm-3">
+          <h6>High Resolution</h6>
 
-	</body>
+          <p>We did a 2.5K size high resolution photo that will suit even for a very large web site.</p>
+        </div>
+        <div class="col-sm-3 col-sm-offset-1">
+          <h6>Easy to use</h6>
+
+          <p>To get started, you select the desired sample and base the entire website on it. It’s that
+            simple!</p>
+        </div>
+        <div class="col-sm-3 col-sm-offset-1">
+          <h6>Feel our design</h6>
+
+          <p>Samples will show you the feeling on how to play around using the components.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section><section class="price-3">
+  <div class="container">
+    <div class="plans">
+      <div class="plan">
+        <div class="title">
+          <div class="img"><img src="startup/common-files/icons/retina-ready-s@2x.png" width="117" height="104" alt=""></div>
+          Starter Plan
+        </div>
+        <div class="price">19$/month</div>
+        <div class="description">
+          10,000 messages<br>
+          <b>unlimited</b> data<br>
+          <b>unlimited</b> users<br>
+          first 10 day free
+        </div>
+        <a class="btn disabled" href="#">Your Current Plan</a>
+      </div>
+      <div class="plan plan-2">
+        <div class="title">
+          <div class="img"><img src="startup/common-files/icons/rocket@2x.png" width="101" height="101" alt=""></div>
+          Business Plan
+        </div>
+        <div class="price">39$/month</div>
+        <div class="description">
+          10,000 messages<br>
+          <b>unlimited</b> data<br>
+          <b>unlimited</b> users<br>
+          first 30 day free
+        </div>
+        <a class="btn btn-primary" href="#">Change to this Plan</a>
+      </div>
+      <div class="plan">
+        <div class="title">
+          <div class="img"><img src="startup/common-files/icons/magic-wand@2x.png" width="100" height="100" alt=""></div>
+          Developer Plan
+        </div>
+        <div class="price">59$/month</div>
+        <div class="description">
+          10,000 messages<br>
+          <b>unlimited</b> data<br>
+          <b>unlimited</b> users<br>
+          first 100 day free
+        </div>
+        <a class="btn btn-primary" href="#">Change to this Plan</a>
+      </div>
+    </div>
+  </div>
+
+</section><section class="contacts-1">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-8">
+        <h3>We love what we do. <br> This is features of our products</h3>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-6">
+        <form>
+          <label class="h6">Name / Last Name</label>
+          <input type="text" class="form-control">
+          <label class="h6">E-mail</label>
+          <input type="text" class="form-control">
+          <label class="h6">Message</label>
+          <textarea rows="7" class="form-control"></textarea>
+          <button type="submit" class="btn btn-primary"><span class="fui-mail"></span></button>
+        </form>
+      </div>
+
+      <div class="col-sm-4 col-sm-offset-1">
+        <div class="additional">
+          <h6>Need Help?</h6>
+          <p>Don’t hestiate to ask us something. Email us directly <a href="#">info@designmodo.com</a> or call us at <b>1-347-567-8670</b>. You can checkout our <a href="#">FAQ</a> and <a href="#">Help</a> page to get more information about our products.</p>
+        </div>
+        <div class="additional">
+          <h6>FAQ</h6>
+          <p>As a Harvard professor, he was one of the first to explore the relationship between chemical equilibrium and the reaction rate of chemical processes.</p>
+        </div>
+        <div class="phone">
+          <big>347 567 78 90</big>
+          AVAILABLE AT 12PM - 18PM
+        </div>
+      </div>
+    </div>
+  </div>
+</section><footer class="footer-7 ">
+  <div class="container">
+    <a href="#"><span class="fui-home"> </span></a>
+    <nav>
+      <ul>
+        <li><a href="#">FEATURES</a></li>
+        <li><a href="#">PRICING</a></li>
+        <li class="scroll-btn"><a href="#" class="scroll-top fui-arrow-up"> </a></li>
+        <li><a href="#">COMPANY</a></li>
+        <li><a href="#">CONTACT</a></li>
+      </ul>
+    </nav>
+    <div class="social-btns">
+      <a href="#">
+        <div class="fui-vimeo"></div>
+        <div class="fui-vimeo"></div>
+      </a>
+      <a href="#">
+        <div class="fui-facebook"></div>
+        <div class="fui-facebook"></div>
+      </a>
+      <a href="#">
+        <div class="fui-twitter"></div>
+        <div class="fui-twitter"></div>
+      </a>
+    </div>
+  </div>
+</footer>
+      <script src="startup/common-files/js/jquery-1.10.2.min.js"></script>
+      <script src="startup/common-files/js/jquery.bxslider.min.js"></script>
+      <script src="startup/common-files/js/jquery.scrollTo-1.4.3.1-min.js"></script>
+      <script src="startup/common-files/js/jquery.sharrre.min.js"></script>
+      <script src="startup/flat-ui/js/bootstrap.min.js"></script>
+      <script src="startup/common-files/js/masonry.pkgd.min.js"></script>
+      <script src="startup/common-files/js/modernizr.custom.js"></script>
+      <script src="startup/common-files/js/page-transitions.js"></script>
+      <script src="startup/common-files/js/easing.min.js"></script>
+      <script src="startup/common-files/js/jquery.svg.js"></script>
+      <script src="startup/common-files/js/jquery.svganim.js"></script>
+      <script src="startup/common-files/js/jquery.backgroundvideo.min.js"></script>
+      <script src="startup/common-files/js/froogaloop.min.js"></script>
+      <script src="startup/common-files/js/startup-kit.js"></script>
+    </div>
+  </body>
 </html>
