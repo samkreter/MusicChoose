@@ -897,7 +897,7 @@ body > .navbar-collapse .navbar-search .btn-primary:hover {
 .header-11 .navbar .nav > li > a:hover,
 .header-11 .navbar .nav > li > a:focus,
 .header-11 .navbar .nav > li > a.active {
-  color: #16a085;
+  color: #3498db;
 }
 .header-11 .navbar .navbar-toggle {
   background-image: url("../../startup/common-files/icons/menu-icon-header-8@2x.png");
@@ -934,11 +934,11 @@ body > .navbar-collapse .navbar-search .btn-primary:hover {
   filter: alpha(opacity=80);
   font-size: 12px;
   font-weight: normal;
-  color: #1b1f23;
+  color: #465463;
 }
 .header-11-sub .additional-links a {
   text-decoration: underline;
-  color: #1b1f23;
+  color: #2A3136;
 }
 .header-11-sub .additional-links a:hover,
 .header-11-sub .additional-links a:focus,
@@ -1038,7 +1038,7 @@ body > .navbar-collapse .navbar-search .btn-primary:hover {
 }
 .header-11-sub .signup-form form input[type="text"]::-webkit-input-placeholder,
 .header-11-sub .signup-form form input[type="password"]::-webkit-input-placeholder {
-  color: #2c3e50;
+  color: #c6c6c6;
 }
 .header-11-sub .signup-form form input[type="text"].placeholder,
 .header-11-sub .signup-form form input[type="password"].placeholder {
